@@ -1,0 +1,43 @@
+import HeroPerson from "@shared/assets/images/hero-person.png";
+import styles from "@widgets/Hero/ui/HeroBanner/hero.module.scss";
+import MyDay from "@shared/assets/icons/myday.svg";
+import sevendays from "@shared/assets/icons/7days.svg";
+import Calendar from "@shared/assets/icons/calendarsvg.svg";
+
+export const HeroBanner = () => {
+  return (
+    <section className={styles.hero}>
+      <div className={styles.hero__content}>
+        <h1>Organize your work and life</h1>
+        <p>
+          Simple and universal task planning for any of your tasks: <br />
+          manage your time and effectively achieve your goals
+        </p>
+        <button className={styles.hero__button}>Start for free</button>
+        <div className={styles.hero__features}>
+          <div className={styles.feature_card}>
+            <div className={styles.feature_card__img}>
+              <img src={MyDay} alt="My Day" />
+              <div className={styles.feature_card__text}>My Day</div>
+            </div>
+          </div>
+          <div className={styles.feature_card}>
+            <div className={styles.feature_card__img}>
+              <img src={sevendays} alt="7 Days" />
+              <div className={styles.feature_card__text}>7 Days</div>
+            </div>
+          </div>
+          <div className={styles.feature_card}>
+            <div className={styles.feature_card__img}>
+              <img src={Calendar} alt="Calendar" />
+              <div className={styles.feature_card__text}>Calendar</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={styles.hero__image}>
+        <img src={HeroPerson} alt="Person illustration" />
+      </div>
+    </section>
+  );
+};

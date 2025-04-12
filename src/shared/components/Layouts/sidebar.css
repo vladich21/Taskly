@@ -1,0 +1,89 @@
+aside {
+	background-color: url(../../assets/images/background.svg);
+}
+
+.sidebar {
+	background-color: #BBD1F1;
+	width: 252px;
+	height: 100vh;
+}
+
+.user-menu__header {
+	background-color: aliceblue;
+}
+
+.projects {
+	color: white;
+	font-family: Arial, sans-serif;
+}
+
+.projects__header,
+.projects__group-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.projects__title,
+.projects__group-title {
+	font-size: 16px;
+}
+
+.projects__add-button,
+.projects__add-group-button {
+	background-color: transparent;
+	border: none;
+	color: white;
+	cursor: pointer;
+	font-size: 16px;
+}
+
+.projects__list,
+.projects__group-list,
+.projects__sub-list {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+.projects__item,
+.projects__group-item,
+.projects__sub-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 5px;
+}
+
+.projects__item-title,
+.projects__group-title {
+	font-size: 14px;
+}
+
+.projects__folder-icon {
+	width: 16px;
+	height: 16px;
+	background-color: blue;
+	display: inline-block;
+	margin-right: 5px;
+}
+
+.projects__status {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+}
+
+.projects__status--active {
+	background-color: blue;
+}
+
+.projects__status--inactive {
+	background-color: white;
+}
+
+.projects__toggle-group {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}

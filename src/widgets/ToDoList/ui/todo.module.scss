@@ -1,0 +1,54 @@
+.steps {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1320px;
+  margin: 0 auto;
+  position: relative;
+  padding: 40px 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 75px; // центр круга
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #1f1f1f;
+    z-index: 0;
+  }
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1; // поверх линии
+
+  &__circle {
+    width: 72px;
+    height: 72px;
+    background-color: #f3f3f3;
+    color: #1f1f1f;
+    font-size: 42px;
+    border: 1px solid #1f1f1f;
+    font-weight: 500;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__text {
+    margin-top: 12px;
+    text-align: left;
+    font-size: 14px;
+    color: #1f1f1f;
+    max-width: 315px;
+
+    &:last-of-type {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

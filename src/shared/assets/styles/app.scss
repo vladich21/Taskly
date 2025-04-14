@@ -1,2 +1,2 @@
-@import "./libs/normalize";
-@import "./variables";
+@use "./_variables" as *;
+@use "./libs/_normalize" as *;

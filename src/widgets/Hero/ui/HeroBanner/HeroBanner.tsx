@@ -1,4 +1,4 @@
-import HeroPerson from "@shared/assets/images/hero-person.png";
+import HeroPerson from "@shared/assets/images/personx2Tiny.png";
 import styles from "@widgets/Hero/ui/HeroBanner/hero.module.scss";
 import MyDay from "@shared/assets/icons/myday.svg";
 import sevendays from "@shared/assets/icons/7days.svg";

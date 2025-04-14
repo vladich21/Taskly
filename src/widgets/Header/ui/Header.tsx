@@ -7,12 +7,9 @@ export const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        {/* Логотип */}
         <Link to="/" className={styles.logo}>
           <Logo />
         </Link>
-
-        {/* Навигация */}
         <nav className={styles.nav}>
           <Link to="/possibilities" className={styles.navLink}>
             Possibilities <span className={styles.dropdownArrow}>▼</span>
@@ -27,8 +24,6 @@ export const Header = () => {
             Pricing
           </Link>
         </nav>
-
-        {/* Кнопки справа */}
         <div className={styles.actions}>
           <Link to="/login" className={styles.loginBtn}>
             Login

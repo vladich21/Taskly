@@ -1,8 +1,5 @@
 .container {
   width: 100%;
-  max-width: 1320px;
-  margin: 0 auto;
-  padding: 0 20px; // Отступы для всех экранов
 
   @media (max-width: 1200px) {
     padding: 0 15px; // Меньше отступов для экрана с шириной менее 1200px

@@ -3,9 +3,12 @@ import { HeroBanner } from "@widgets/Hero/index";
 import { TodoList } from "@widgets/ToDoList";
 import { MyDay } from "@widgets/MyDay";
 import { SevenDays } from "@widgets/SevenDays";
+import { Calendar } from "@widgets/Calendar";
+import { Testimonials } from "@widgets/Testimonials";
+import { DownloadDevices } from "@widgets/DownloadDevices";
 import { Footer } from "@widgets/Footer";
 
-import styles from "./Lending.module.scss";
+import styles from "./lending.module.scss";
 
 const LendingPage = () => {
   return (
@@ -15,6 +18,9 @@ const LendingPage = () => {
       <TodoList />
       <MyDay />
       <SevenDays />
+      <Calendar />
+      <Testimonials />
+      <DownloadDevices />
       <Footer />
     </div>
   );

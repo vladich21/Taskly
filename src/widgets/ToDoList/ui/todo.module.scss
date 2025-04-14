@@ -1,7 +1,26 @@
+.todo {
+  max-width: 1320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 100px;
+  &__header {
+    border-bottom: 2px solid #0d77ff;
+  }
+  &__header_crossed {
+    font-size: 22px;
+    color: #727272;
+    text-decoration: line-through;
+  }
+  &__header_text {
+    color: #727272;
+  }
+}
 .steps {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   max-width: 1320px;
   margin: 0 auto;
   position: relative;
@@ -10,7 +29,7 @@
   &::before {
     content: "";
     position: absolute;
-    top: 75px; // центр круга
+    top: 75px;
     left: 0;
     right: 0;
     height: 2px;
@@ -23,7 +42,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  z-index: 1; // поверх линии
+  z-index: 1;
 
   &__circle {
     width: 72px;
@@ -38,7 +57,6 @@
     align-items: center;
     justify-content: center;
   }
-
   &__text {
     margin-top: 12px;
     text-align: left;
@@ -46,9 +64,20 @@
     color: #1f1f1f;
     max-width: 315px;
 
-    &:last-of-type {
-      display: flex;
-      justify-content: center;
+    &_next {
+      margin: 0;
+      text-align: left;
+      font-size: 14px;
+      color: #727272;
+      max-width: 315px;
     }
   }
+}
+.step:last-of-type {
+  .step__circle {
+    background-color: #0d77ff;
+    color: #fff;
+    border: #286df5;
+  }
+  align-items: center;
 }

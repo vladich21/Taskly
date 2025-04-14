@@ -1,0 +1,93 @@
+.footer {
+  background-color: #2d2d2d;
+  color: #fff;
+  padding-top: 50px;
+
+  .container {
+    // width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 38px;
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    h4 {
+      font-size: 18px;
+      font-weight: normal;
+      margin-bottom: 8px;
+      color: #f3f3f3;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        font-size: 14px;
+        margin-bottom: 6px;
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    select {
+      background: #444;
+      color: white;
+      border: none;
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    img {
+      width: 120px;
+      margin-top: 4px;
+    }
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .email {
+    font-size: 14px;
+    margin: 6px 0;
+    color: #f3f3f3;
+  }
+
+  .socials {
+    display: flex;
+    gap: 10px;
+    font-size: 18px;
+
+    svg {
+      cursor: pointer;
+
+      &:hover {
+        color: #007bff;
+      }
+    }
+  }
+
+  &__bottom {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 10px;
+    font-size: 13px;
+
+    p {
+      color: #f3f3f3;
+    }
+  }
+}

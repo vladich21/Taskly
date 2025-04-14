@@ -8,7 +8,7 @@ import { Testimonials } from "@widgets/Testimonials";
 import { DownloadDevices } from "@widgets/DownloadDevices";
 import { Footer } from "@widgets/Footer";
 
-import styles from "./lending.module.scss";
+import styles from "./Lending.module.scss";
 
 const LendingPage = () => {
   return (

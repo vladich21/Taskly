@@ -1,5 +1,5 @@
 import logoWhite from "@shared/assets/icons/logo-white.svg";
-import styles from "./Footer.module.scss";
+import styles from "./footer.module.scss";
 import telegram from "@shared/assets/icons/telegram.svg";
 import facebook from "@shared/assets/icons/facebook.svg";
 import instagram from "@shared/assets/icons/instagram.svg";

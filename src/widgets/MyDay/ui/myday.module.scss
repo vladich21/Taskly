@@ -73,9 +73,14 @@
     }
 
     &__image {
+      width: 100%;
+      max-width: 650px; // или любой другой лимит, чтобы оно не было слишком большим
+
       img {
-        height: 100%;
+        width: 100%;
+        height: auto;
         object-fit: contain;
+        display: block;
       }
     }
   }

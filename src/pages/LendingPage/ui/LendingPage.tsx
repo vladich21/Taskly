@@ -12,17 +12,19 @@ import styles from "./Lending.module.scss";
 
 const LendingPage = () => {
   return (
-    <div className={styles.container}>
-      <Header />
-      <HeroBanner />
-      <TodoList />
-      <MyDay />
-      <SevenDays />
-      <Calendar />
-      <Testimonials />
-      <DownloadDevices />
+    <>
+      <div className={styles.container}>
+        <Header />
+        <HeroBanner />
+        <TodoList />
+        <MyDay />
+        <SevenDays />
+        <Calendar />
+        <Testimonials />
+        <DownloadDevices />
+      </div>
       <Footer />
-    </div>
+    </>
   );
 };
 

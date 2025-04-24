@@ -1,5 +1,5 @@
 import HeroPerson from "@shared/assets/images/personx2Tiny.png";
-import styles from "./hero.module.scss";
+import styles from "./Hero.module.scss";
 import MyDay from "@shared/assets/icons/myday.svg";
 import sevendays from "@shared/assets/icons/7days.svg";
 import Calendar from "@shared/assets/icons/calendarsvg.svg";

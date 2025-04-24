@@ -1,10 +1,20 @@
 import HeroPerson from "@shared/assets/images/personx2Tiny.png";
-import styles from "@widgets/Hero/ui/HeroBanner/hero.module.scss";
+import styles from "./hero.module.scss";
 import MyDay from "@shared/assets/icons/myday.svg";
 import sevendays from "@shared/assets/icons/7days.svg";
 import Calendar from "@shared/assets/icons/calendarsvg.svg";
 
-export const HeroBanner = () => {
+type HeroBannerProps = {
+  onScrollToMyDay: () => void;
+  onScrollToSevenDays: () => void;
+  onScrollToCalendar: () => void;
+};
+
+export const HeroBanner = ({
+  onScrollToMyDay,
+  onScrollToSevenDays,
+  onScrollToCalendar,
+}: HeroBannerProps) => {
   return (
     <section className={styles.hero}>
       <div className={styles.hero__content}>
@@ -16,19 +26,25 @@ export const HeroBanner = () => {
         <button className={styles.hero__button}>Start for free</button>
         <div className={styles.hero__features}>
           <div className={styles.feature_card}>
-            <div className={styles.feature_card__img}>
+            <div className={styles.feature_card__img} onClick={onScrollToMyDay}>
               <img src={MyDay} alt="My Day" />
               <div className={styles.feature_card__text}>My Day</div>
             </div>
           </div>
           <div className={styles.feature_card}>
-            <div className={styles.feature_card__img}>
+            <div
+              className={styles.feature_card__img}
+              onClick={onScrollToSevenDays}
+            >
               <img src={sevendays} alt="7 Days" />
               <div className={styles.feature_card__text}>7 Days</div>
             </div>
           </div>
           <div className={styles.feature_card}>
-            <div className={styles.feature_card__img}>
+            <div
+              className={styles.feature_card__img}
+              onClick={onScrollToCalendar}
+            >
               <img src={Calendar} alt="Calendar" />
               <div className={styles.feature_card__text}>Calendar</div>
             </div>

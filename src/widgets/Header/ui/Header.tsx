@@ -9,7 +9,6 @@ export const Header = () => {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      // Проверяем, что event.target не равен null перед использованием closest
       if (
         menuOpen &&
         event.target instanceof HTMLElement &&

@@ -1,6 +1,6 @@
 import styles from "./myday.module.scss";
-import myday from "@shared/assets/icons/Mydaybig.svg";
-import mydayTwo from "@shared/assets/icons/Myday-two.svg";
+import myday from "@shared/assets/icons/lending/Mydaybig.svg";
+import mydayTwo from "@shared/assets/icons/lending/Myday-two.svg";
 
 export const MyDay = () => {
   return (

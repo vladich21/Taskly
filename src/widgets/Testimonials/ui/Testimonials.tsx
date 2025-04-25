@@ -1,13 +1,13 @@
 import styles from "./testimonials.module.scss";
-import symbol from "@shared/assets/icons/“.svg";
+import symbol from "@shared/assets/icons/lending/“.svg";
 import user1 from "@shared/assets/images/men_one.png";
 import user2 from "@shared/assets/images/men_two.png";
-import google from "@shared/assets/icons/logo_one.svg";
-import yandex from "@shared/assets/icons/logo_two.svg";
-import wework from "@shared/assets/icons/logo_three.svg";
-import microsoft from "@shared/assets/icons/logo_four.svg";
-import netflix from "@shared/assets/icons/logo_five.svg";
-import spotify from "@shared/assets/icons/logo_six.svg";
+import google from "@shared/assets/icons/lending/logo_one.svg";
+import yandex from "@shared/assets/icons/lending/logo_two.svg";
+import wework from "@shared/assets/icons/lending/logo_three.svg";
+import microsoft from "@shared/assets/icons/lending/logo_four.svg";
+import netflix from "@shared/assets/icons/lending/logo_five.svg";
+import spotify from "@shared/assets/icons/lending/logo_six.svg";
 
 const testimonials = [
   {

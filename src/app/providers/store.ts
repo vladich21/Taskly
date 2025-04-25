@@ -1,19 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
-// import { userReducer } from "@entities/user"; // пример подключения slice
-import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
+import { groupApi } from "@entities/Group/api/groupApi";
 
 export const store = configureStore({
   reducer: {
-    // user: userReducer,
-    // другие редюсеры
+    [groupApi.reducerPath]: groupApi.reducer,
   },
-  devTools: import.meta.env.MODE !== "production",
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(groupApi.middleware),
 });
 
-// Типы для удобства
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
-
-// Кастомные хуки
-export const useAppDispatch = () => useDispatch<AppDispatch>();
-export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;

@@ -1,11 +1,14 @@
 import styles from "./Sidebar.module.scss";
-import { GroupItem } from "@entities/Group/ui/GroupItem";
-import { AddGroup } from "@features/AddGroup/ui/AddGroup";
+import { ProjectList } from "@widgets/ProjectList/ui/ProjectList";
+// import AddGroup from "@widgets/AddGroup/ui/AddGroup";
 import Avatar from "@shared/assets/icons/sidebar/Avatar.svg";
-import { MyTaskIcon } from "@shared/components/ui";
+import { DropDownIcon, MyTaskIcon } from "@shared/components/ui";
 import { SevenDaysIcon } from "@shared/components/ui";
 import { CalendarIcon } from "@shared/components/ui";
-import DropDown from "@shared/assets/icons/sidebar/dropDown.svg";
+// import DropDown from "@shared/assets/icons/sidebar/dropDown.svg";
+import DnDProvider from "@shared/components/ui/DnDProvider/DnDProvider";
+import { CreateGroup } from "../../../features/CreateGroup";
+import { AddGroup } from "../../AddGroup/ui/AddGroup";
 
 export const Sidebar = () => {
   return (
@@ -30,20 +33,12 @@ export const Sidebar = () => {
             <span>My calendar</span>
           </li>
         </ul>
-
         <div className={styles.section}>
-          <div className={styles.sectionHeader}>
-            <div className={styles.label}>
-              <img src={DropDown} alt="dropdown" />
-              <span>Projects</span>
-            </div>
-            <button>＋</button>
-          </div>
-          <GroupItem />
-        </div>
-
-        <div className={styles.section}>
-          <AddGroup />
+          <DnDProvider>
+            <ProjectList />
+            <CreateGroup />
+            <AddGroup />
+          </DnDProvider>
         </div>
       </nav>
     </aside>

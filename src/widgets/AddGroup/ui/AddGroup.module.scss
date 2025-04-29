@@ -1,0 +1,31 @@
+.groupList {
+  margin-top: 20px;
+}
+
+.groupItem {
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.folderIcon {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.groupProjects {
+  padding-left: 16px;
+}
+
+.projectInGroup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+.activeDrop {
+  border-color: #5b9bd5; /* Голубая рамка при наведении */
+  // background-color: #f0f8ff; /* Лёгкий фон */
+}

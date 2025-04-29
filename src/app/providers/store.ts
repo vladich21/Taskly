@@ -1,12 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { groupApi } from "@entities/Group/api/groupApi";
+import projectReducer from "@entities/Project/model/projectSlice";
+import groupReducer from "@entities/Group/model/groupSlice";
 
 export const store = configureStore({
   reducer: {
-    [groupApi.reducerPath]: groupApi.reducer,
+    project: projectReducer,
+    group: groupReducer,
   },
-  middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(groupApi.middleware),
 });
 
 export type RootState = ReturnType<typeof store.getState>;

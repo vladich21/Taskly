@@ -1,0 +1,32 @@
+.projectList {
+  .sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .addProjectInput {
+    margin-top: 10px;
+  }
+
+  .projectsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .projectItem {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: move;
+    background-color: #fff;
+  }
+
+  .groupsContainer {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}

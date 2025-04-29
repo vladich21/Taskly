@@ -7,6 +7,10 @@ export default defineConfig({
   plugins: [react(), svgr()],
   resolve: {
     alias: {
+      // "@app/styles/libs/variables": path.resolve(
+      //   __dirname,
+      //   "./src/shared/styles/variables.scss"
+      // ),
       "@app": path.resolve(__dirname, "src/app"),
       "@entities": path.resolve(__dirname, "src/entities"),
       "@features": path.resolve(__dirname, "src/features"),

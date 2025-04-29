@@ -1,11 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-// import { userReducer } from "@entities/user"; // пример подключения slice
-import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
+import projectReducer from "@entities/Project/model/projectSlice";
+import groupReducer from "@entities/Group/model/groupSlice";
 
 export const store = configureStore({
   reducer: {
-    // user: userReducer,
-    // другие редюсеры
+    project: projectReducer,
+    group: groupReducer,
   },
   devTools: import.meta.env.MODE !== "production",
 });

@@ -1,13 +1,9 @@
-import "../shared/assets/styles/app.scss";
-import { Routes, Route } from "react-router-dom";
-import { LendingPage } from "@pages/LendingPage";
+import "@app/styles/app.scss";
+import { RouterProvider } from "react-router-dom";
+import { router } from "@app/router/router"; // предположим, что твой роутер находится в директории src/router
 
 const App = () => {
-  return (
-    <Routes>
-      <Route path="/" element={<LendingPage />} />
-    </Routes>
-  );
+  return <RouterProvider router={router} />;
 };
 
 export default App;

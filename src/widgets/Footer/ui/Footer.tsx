@@ -1,9 +1,9 @@
-import logoWhite from "@shared/assets/icons/logo-white.svg";
+import logoWhite from "@shared/assets/icons/lending/logo-white.svg";
 import styles from "./footer.module.scss";
-import telegram from "@shared/assets/icons/telegram.svg";
-import facebook from "@shared/assets/icons/facebook.svg";
-import instagram from "@shared/assets/icons/instagram.svg";
-import linkedin from "@shared/assets/icons/linkedin.svg";
+import telegram from "@shared/assets/icons/lending/telegram.svg";
+import facebook from "@shared/assets/icons/lending/facebook.svg";
+import instagram from "@shared/assets/icons/lending/instagram.svg";
+import linkedin from "@shared/assets/icons/lending/linkedin.svg";
 
 export const Footer = () => {
   return (

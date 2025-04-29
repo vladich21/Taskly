@@ -19,4 +19,11 @@ export default defineConfig({
       "@widgets": path.resolve(__dirname, "src/widgets"),
     },
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@use "@app/styles/libs/variables" as *;`,
+      },
+    },
+  },
 });

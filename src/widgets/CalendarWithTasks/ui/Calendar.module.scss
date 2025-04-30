@@ -2,13 +2,30 @@
   padding: 20px;
   max-width: 1000px;
   margin: 0 auto;
+  position: relative;
 }
 
 .controls {
   display: flex;
-  gap: 20px;
+  gap: 15px;
   margin-bottom: 30px;
   align-items: center;
+  flex-wrap: wrap;
+}
+
+.addTaskButton {
+  padding: 10px 20px;
+  background: #0d77ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.2s;
+
+  &:hover {
+    background: #0a62d4;
+  }
 }
 
 .scheduleButton {
@@ -36,11 +53,12 @@
   align-items: center;
   gap: 8px;
   font-size: 14px;
+  white-space: nowrap;
 }
 
 .daysContainer {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   gap: 20px;
 }
 
@@ -56,6 +74,22 @@
   }
 }
 
+.buttonNavigations {
+  margin-top: 20px;
+  display: flex;
+  gap: 920px;
+}
+
+.navigationButton {
+  width: 48px;
+  height: 48px;
+
+  svg {
+    width: 35px;
+    height: 35px;
+  }
+}
+
 .dayHeader {
   display: flex;
   justify-content: space-between;
@@ -64,16 +98,45 @@
   padding-bottom: 10px;
   border-bottom: 1px solid #eee;
 
-  h3 {
-    margin: 0;
-    font-size: 18px;
-    color: #333;
-  }
+  // h3 {
+  //   margin: 0;
+  //   font-size: 18px;
+  //   color: #333;
+  // }
+}
+
+.dayDate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.dayName {
+  font-size: 16px;
+  color: #555;
+  text-transform: capitalize;
+}
+
+.dayNumber {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin: 4px 0;
+}
+
+.monthName {
+  font-size: 16px;
+  color: #555;
+  text-transform: lowercase;
 }
 
 .dayHours {
   font-size: 14px;
   color: #666;
+  align-self: center;
+  width: 100%;
 }
 
 .tasksList {
@@ -83,67 +146,149 @@
 }
 
 .taskCard {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   border-radius: 6px;
+  background: white;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  border-left: 4px solid #ccc;
+  transition: all 0.2s ease;
 
-  &.high {
-    border-left-color: #e74c3c;
-  }
+  &.completed {
+    opacity: 0.7;
+    background-color: #f8f9fa;
 
-  &.medium {
-    border-left-color: #f39c12;
-  }
+    .taskTitle {
+      text-decoration: line-through;
+      color: #6c757d;
+    }
 
-  &.low {
-    border-left-color: #2ecc71;
+    .taskMeta {
+      color: #adb5bd;
+
+      .priority-icon {
+        opacity: 0.5;
+      }
+    }
   }
 }
 
-.taskMain {
+.taskContent {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 15px;
-  background: white;
-  cursor: pointer;
-  transition: background 0.2s;
+  width: 100%;
+}
 
-  &:hover {
-    background: #f5f5f5;
+.taskPriority {
+  width: 5px;
+  flex-shrink: 0;
+
+  &.high {
+    background-color: #e74c3c;
+  }
+
+  &.medium {
+    background-color: #f39c12;
+  }
+
+  &.low {
+    background-color: #2ecc71;
+  }
+}
+.taskMain {
+  flex-grow: 1;
+  padding: 12px 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+
+  input[type="checkbox"] {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #dee2e6;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:checked {
+      background-color: #0d6efd;
+      border-color: #0d6efd;
+
+      &::after {
+        content: "✓";
+        color: white;
+        font-size: 12px;
+        position: absolute;
+      }
+    }
+  }
+}
+
+.taskCheckbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  input {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    margin-right: 5px;
   }
 }
 
 .taskTitle {
   font-weight: 500;
   flex-grow: 1;
+  text-decoration: var(--task-text-decoration, none);
+}
+
+.completed .taskTitle {
+  text-decoration: line-through;
 }
 
 .taskMeta {
   margin-left: 15px;
-  color: #666;
+  color: #ccc;
   font-size: 14px;
   white-space: nowrap;
 }
 
 .dependencyBadge {
   margin-left: 10px;
-  background: #f0f0f0;
+  background: rgba(255, 255, 255, 0.2);
   padding: 2px 6px;
   border-radius: 12px;
   font-size: 12px;
 }
 
 .taskDetails {
-  padding: 15px;
-  background: #f9f9f9;
+  padding: 12px 15px;
+  background: #f8f9fa;
   border-top: 1px solid #eee;
-  font-size: 14px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .detailRow {
   display: flex;
   margin-bottom: 8px;
+  font-size: 14px;
 
   & > span:first-child {
     font-weight: 500;
@@ -156,11 +301,12 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
+  margin-top: 4px;
 }
 
 .dependencyItem {
-  background: #fff;
   padding: 4px 8px;
+  background: #fff;
   border-radius: 4px;
   border: 1px solid #eee;
   font-size: 13px;

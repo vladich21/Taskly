@@ -4,7 +4,11 @@ import { addTask } from "@features/AutoPlanning/model/tasksSlice";
 import { RootState } from "@app/providers/store";
 import styles from "./TaskForm.module.scss";
 
-export const TaskForm = () => {
+interface TaskFormProps {
+  onSuccess?: () => void;
+}
+
+export const TaskForm = ({ onSuccess }: TaskFormProps) => {
   const [title, setTitle] = useState("");
   const [duration, setDuration] = useState(2);
   const [priority, setPriority] = useState<"low" | "medium" | "high">("medium");
@@ -12,11 +16,10 @@ export const TaskForm = () => {
   const [selectedDependencies, setSelectedDependencies] = useState<string[]>(
     []
   );
-
+  const [showDependencies, setShowDependencies] = useState(false);
   const dispatch = useDispatch();
   const tasks = useSelector((state: RootState) => state.tasks.tasks);
 
-  // Получаем список задач для выпадающего списка (исключая завершенные)
   const availableTasks = tasks.filter((task) => !task.isCompleted);
 
   const handleSubmit = () => {
@@ -31,11 +34,11 @@ export const TaskForm = () => {
           selectedDependencies.length > 0 ? selectedDependencies : undefined,
       })
     );
-    // Сбрасываем форму
     setTitle("");
     setDuration(2);
     setDeadline("");
     setSelectedDependencies([]);
+    // onSuccess?.();
   };
 
   const toggleDependency = (taskId: string) => {
@@ -94,24 +97,39 @@ export const TaskForm = () => {
       </div>
 
       <div className={styles.formGroup}>
-        <label>Зависит от:</label>
-        <div className={styles.dependenciesList}>
-          {availableTasks.map((task) => (
-            <label key={task.id} className={styles.dependencyItem}>
-              <input
-                type="checkbox"
-                checked={selectedDependencies.includes(task.id)}
-                onChange={() => toggleDependency(task.id)}
-              />
-              <span>
-                {task.title} ({task.priority}, {task.duration}h)
-                {task.date && ` [${new Date(task.date).toLocaleDateString()}]`}
-              </span>
-            </label>
-          ))}
-          {availableTasks.length === 0 && (
-            <div className={styles.noTasks}>Нет активных задач для выбора</div>
-          )}
+        <button
+          type="button"
+          onClick={() => setShowDependencies(!showDependencies)}
+          className={styles.toggleDependenciesButton}
+        >
+          {showDependencies ? "Скрыть зависимости" : "Выбрать зависимости"}
+        </button>
+
+        <div
+          className={`${styles.dependenciesContainer} ${
+            showDependencies ? styles.visible : ""
+          }`}
+        >
+          <div className={styles.dependenciesList}>
+            {availableTasks.length > 0 ? (
+              availableTasks.map((task) => (
+                <label key={task.id} className={styles.dependencyItem}>
+                  <input
+                    type="checkbox"
+                    checked={selectedDependencies.includes(task.id)}
+                    onChange={() => toggleDependency(task.id)}
+                  />
+                  <span>
+                    {task.title} ({task.priority}, {task.duration}h)
+                    {task.date &&
+                      ` [${new Date(task.date).toLocaleDateString()}]`}
+                  </span>
+                </label>
+              ))
+            ) : (
+              <div className={styles.noTasks}>Нет доступных задач</div>
+            )}
+          </div>
         </div>
       </div>
 

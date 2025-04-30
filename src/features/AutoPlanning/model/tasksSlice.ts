@@ -50,6 +50,17 @@ export const tasksSlice = createSlice({
       });
     },
 
+    toggleTaskCompletion: (state, action: PayloadAction<string>) => {
+      const task = state.tasks.find((t) => t.id === action.payload);
+      if (task) {
+        task.isCompleted = !task.isCompleted;
+        // Если задача завершена, снимаем дату выполнения
+        if (task.isCompleted) {
+          task.date = undefined;
+        }
+      }
+    },
+
     toggleWeekends: (state) => {
       state.calendarSettings.skipWeekends =
         !state.calendarSettings.skipWeekends;
@@ -113,6 +124,10 @@ export const tasksSlice = createSlice({
   },
 });
 
-export const { addTask, autoScheduleTasks, toggleWeekends } =
-  tasksSlice.actions;
+export const {
+  addTask,
+  autoScheduleTasks,
+  toggleWeekends,
+  toggleTaskCompletion,
+} = tasksSlice.actions;
 export default tasksSlice.reducer;

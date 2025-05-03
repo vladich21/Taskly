@@ -18,7 +18,7 @@ export const DroppableGroup = ({
   const { setNodeRef, isOver } = useDroppable({
     id: `group-${id}`,
   });
-
+  console.log(111);
   return (
     <div
       ref={setNodeRef}

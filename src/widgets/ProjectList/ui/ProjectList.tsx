@@ -30,7 +30,7 @@ export const ProjectList = () => {
       setIsInputVisible(false);
     }
   };
-
+  console.log(2);
   return (
     <div className={styles.projectList}>
       <div className={styles.sectionHeader}>
@@ -88,6 +88,7 @@ const DraggableProjectItem = ({
     opacity: isDragging ? 0.5 : 1,
   };
 
+  console.log(3);
   return (
     <div
       ref={setNodeRef}

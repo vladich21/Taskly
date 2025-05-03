@@ -35,7 +35,7 @@ export const ProjectList = () => {
     <div className={styles.projectList}>
       <div className={styles.sectionHeader}>
         <div className={styles.label}>
-          <span>Projects</span>
+          <span>Pros</span>
         </div>
         <button onClick={() => setIsInputVisible((prev) => !prev)}>＋</button>
       </div>

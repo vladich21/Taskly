@@ -1,6 +1,6 @@
 // store/slices/tasksSlice.ts
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Task, CalendarSettings } from "@entities/Task/model/types";
+import { CalendarSettings, Task } from "../../../entities/Task/model/types";
 
 interface TasksState {
   tasks: Task[];

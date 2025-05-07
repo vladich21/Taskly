@@ -1,5 +1,3 @@
-// src/features/CreateGroup/CreateGroup.tsx
-
 import { useState } from "react";
 import { useAppDispatch, useAppSelector } from "@shared/hooks/hooks";
 import { addGroup } from "@entities/Group/model/groupSlice";

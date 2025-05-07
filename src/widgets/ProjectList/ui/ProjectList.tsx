@@ -30,12 +30,12 @@ export const ProjectList = () => {
       setIsInputVisible(false);
     }
   };
-
+  console.log(2);
   return (
     <div className={styles.projectList}>
       <div className={styles.sectionHeader}>
         <div className={styles.label}>
-          <span>Pros</span>
+          <span>Projects</span>
         </div>
         <button onClick={() => setIsInputVisible((prev) => !prev)}>＋</button>
       </div>
@@ -88,6 +88,7 @@ const DraggableProjectItem = ({
     opacity: isDragging ? 0.5 : 1,
   };
 
+  console.log(3);
   return (
     <div
       ref={setNodeRef}

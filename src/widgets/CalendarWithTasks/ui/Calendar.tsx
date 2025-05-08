@@ -253,63 +253,6 @@ const Calendar = () => {
                     </div>
                   ))}
               </div>
-              {/* <div className={styles.tasksList}>
-                {groupedTasks[date]
-                  .sort((a, b) => {
-                    const priorityOrder = { high: 3, medium: 2, low: 1 };
-                    return (
-                      priorityOrder[b.priority] - priorityOrder[a.priority]
-                    );
-                  })
-                  .map((task) => (
-                    <div
-                      key={task.id}
-                      className={`${styles.taskCard} ${
-                        task.isCompleted ? styles.completed : ""
-                      } ${styles[task.priority]}`}
-                      onClick={() => toggleTaskDetails(task.id)}
-                    >
-                      <div
-                        className={`${styles.taskPriority} ${
-                          styles[task.priority]
-                        }`}
-                      ></div>
-                      <div className={styles.taskMain}>
-                        <input
-                          type="checkbox"
-                          checked={task.isCompleted}
-                          onChange={(e) => {
-                            e.stopPropagation();
-                            dispatch(toggleTaskCompletion(task.id));
-                          }}
-                          className={styles.taskCheckbox}
-                        />
-                        <span className={styles.taskTitle}>{task.title}</span>
-                        <span className={styles.taskMeta}>
-                          {task.duration}ч •{" "}
-                          {task.priority === "high"
-                            ? "🔴"
-                            : task.priority === "medium"
-                            ? "🟡"
-                            : "🟢"}
-                        </span>
-                      </div>
-
-                      {expandedTasks[task.id] && (
-                        <div className={styles.taskDetails}>
-                          {task.deadline && (
-                            <div className={styles.detailRow}>
-                              <span>Дедлайн:</span>
-                              <span>
-                                {new Date(task.deadline).toLocaleDateString()}
-                              </span>
-                            </div>
-                          )}
-                        </div>
-                      )}
-                    </div>
-                  ))}
-              </div> */}
             </div>
           ))}
         </div>

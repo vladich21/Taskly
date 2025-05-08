@@ -1,61 +1,66 @@
-// src/features/CreateGroup/CreateGroup.tsx
-
 import { useState } from "react";
 import { useAppDispatch, useAppSelector } from "@shared/hooks/hooks";
 import { addGroup } from "@entities/Group/model/groupSlice";
+import { ChevronDown, ChevronRight, Plus } from "lucide-react";
+import { motion } from "framer-motion";
 import styles from "./CreateGroup.module.scss";
-import { DropDownIcon } from "@shared/components/ui";
 
 export const CreateGroup = () => {
   const dispatch = useAppDispatch();
   const groups = useAppSelector((state) => state.group.groups);
-
-  const [inputValue, setInputValue] = useState("");
-  const [isOpen, setIsOpen] = useState(false);
+  const [groupName, setGroupName] = useState("");
   const [isInputVisible, setIsInputVisible] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(true);
 
-  const toggleDropdown = () => setIsOpen((prev) => !prev);
-  const toggleInput = () => {
-    setIsInputVisible((prev) => !prev);
-    setIsOpen(true);
-  };
-
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (e.key === "Enter" && inputValue.trim()) {
-      dispatch(addGroup(inputValue.trim()));
-      setInputValue("");
+  const handleAddGroup = () => {
+    const title = groupName.trim();
+    if (title) {
+      dispatch(addGroup(title));
+      setGroupName("");
       setIsInputVisible(false);
     }
   };
 
   return (
-    <div className={styles.addGroup}>
+    <div className={styles.createGroup}>
       <div className={styles.sectionHeader}>
-        <div className={styles.label}>
-          <DropDownIcon
-            className={`${styles.dropdownIcon} ${isOpen ? styles.open : ""}`}
-            onClick={toggleDropdown}
-            onMouseDown={(e) => e.preventDefault()}
-          />
-          <span>Add group</span>
+        <div
+          className={styles.label}
+          onClick={() => setIsExpanded(!isExpanded)}
+        >
+          <button className={styles.dropdownIcon}>
+            {isExpanded ? (
+              <ChevronDown size={16} />
+            ) : (
+              <ChevronRight size={16} />
+            )}
+          </button>
+          <span>Groups</span>
         </div>
-        <button onClick={toggleInput}>＋</button>
+        <button onClick={() => setIsInputVisible((prev) => !prev)}>
+          <Plus size={16} />
+        </button>
       </div>
 
-      {isInputVisible && isOpen && (
-        <div className={styles.inputWrapper}>
+      {isInputVisible && (
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: "auto" }}
+          exit={{ opacity: 0, height: 0 }}
+          className={styles.inputWrapper}
+        >
           <input
-            value={inputValue}
-            onChange={(e) => setInputValue(e.target.value)}
-            onKeyDown={handleKeyDown}
-            placeholder="Group name"
+            type="text"
+            placeholder="New group name"
+            value={groupName}
+            onChange={(e) => setGroupName(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") handleAddGroup();
+            }}
             autoFocus
           />
-        </div>
+        </motion.div>
       )}
-
-      {/* Можно убрать отображение списка групп здесь! 
-          Отображение теперь будет в виджете */}
     </div>
   );
 };

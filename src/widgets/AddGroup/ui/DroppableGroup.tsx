@@ -1,9 +1,9 @@
 import { useDroppable } from "@dnd-kit/core";
 import { Group } from "@entities/Group/model/types";
-import { useAppDispatch } from "../../../shared/hooks/hooks";
-import { moveProjectToGroup } from "../../../entities/Project/model/projectSlice";
-import styles from "./AddGroup.module.scss";
+import { useAppDispatch } from "@shared/hooks/hooks";
+import { moveProjectToGroup } from "@entities/Project/model/projectSlice";
 import { useEffect } from "react";
+import styles from "./AddGroup.module.scss";
 
 interface DroppableGroupProps {
   group: Group;
@@ -12,23 +12,21 @@ interface DroppableGroupProps {
 
 export const DroppableGroup = ({ group, children }: DroppableGroupProps) => {
   const { setNodeRef, isOver, active } = useDroppable({
-    id: group.id,
+    id: `group-${group.id}`,
   });
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    if (isOver && active?.id) {
-      dispatch(
-        moveProjectToGroup({ projectId: Number(active.id), groupId: group.id })
-      );
+    if (isOver && active?.id && active.id.toString().startsWith("project-")) {
+      const projectId = Number(active.id.toString().replace("project-", ""));
+      dispatch(moveProjectToGroup({ projectId, groupId: group.id }));
     }
-  }, [isOver, active?.id]);
+  }, [isOver, active?.id, dispatch, group.id]);
 
   return (
     <div
       ref={setNodeRef}
       className={`${styles.groupItem} ${isOver ? styles.activeDrop : ""}`}
-      data-id={group.id}
     >
       {children}
     </div>

@@ -1,44 +1,37 @@
-// src/entities/Project/model/projectSlice.ts
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { Project } from "./types";
+import { ProjectStatusColor } from "../../../shared/types/project";
 
-type Project = {
-  id: number;
-  title: string;
-  groupId: number | null;
-  statusColor: string;
-};
-
-type ProjectState = {
+interface ProjectState {
   projects: Project[];
-};
+}
 
 const initialState: ProjectState = {
   projects: [],
 };
 
-const projectSlice = createSlice({
+export const projectSlice = createSlice({
   name: "project",
   initialState,
   reducers: {
-    addProject: (
-      state,
-      action: PayloadAction<{
-        title: string;
-        statusColor: string;
-        groupId: number | null;
-      }>
-    ) => {
-      const newProject: Project = {
-        id: Date.now(),
-        title: action.payload.title,
-        groupId: action.payload.groupId,
-        statusColor: action.payload.statusColor,
-      };
-      state.projects.push(newProject);
+    addProject: {
+      reducer(state, action: PayloadAction<Project>) {
+        state.projects.push(action.payload);
+      },
+      prepare(title: string, groupId: number | null = null) {
+        return {
+          payload: {
+            id: Date.now(),
+            title,
+            groupId,
+            statusColor: "active" as ProjectStatusColor,
+          },
+        };
+      },
     },
     moveProjectToGroup: (
       state,
-      action: PayloadAction<{ projectId: number; groupId: number }>
+      action: PayloadAction<{ projectId: number; groupId: number | null }>
     ) => {
       const { projectId, groupId } = action.payload;
       const project = state.projects.find((p) => p.id === projectId);

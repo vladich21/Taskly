@@ -1,32 +1,60 @@
 .projectList {
-  .sectionHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  margin-bottom: 20px;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+
+  .label {
+    font: var(--font-s);
+    color: white;
   }
 
-  .addProjectInput {
-    margin-top: 10px;
+  button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0;
   }
+}
 
-  .projectsContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
+.inputWrapper {
+  overflow: hidden;
+  margin-bottom: 8px;
 
-  .projectItem {
-    padding: 10px;
-    border: 1px solid #ccc;
+  input {
+    width: 100%;
+    padding: 6px 10px;
     border-radius: 4px;
-    cursor: move;
-    background-color: #fff;
+    border: 1px solid #ccc;
+    background: white;
+    color: black;
+  }
+}
+
+.projectsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.projectItem {
+  padding: 8px 12px;
+  background: #1a235a;
+  border-radius: 4px;
+  color: white;
+  cursor: grab;
+  will-change: transform;
+
+  &:hover {
+    background: #2a3a7a;
   }
 
-  .groupsContainer {
-    margin-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+  &:active {
+    cursor: grabbing;
   }
 }

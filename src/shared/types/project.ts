@@ -4,3 +4,5 @@ export interface Project {
   statusColor: "active" | "completed";
   groupId: number | null; // null если проект не в папке
 }
+// shared/types/project.ts
+export type ProjectStatusColor = "active" | "completed" | "on-hold";

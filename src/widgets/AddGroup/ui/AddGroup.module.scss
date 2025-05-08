@@ -2,30 +2,62 @@
   margin-top: 20px;
 }
 
-.groupItem {
-  padding: 8px;
-  margin-bottom: 10px;
-  border: 2px solid transparent;
-  border-radius: 8px;
-  transition: border-color 0.2s, background-color 0.2s;
+.groupsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.folderIcon {
+.groupHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
   font-weight: bold;
-  margin-bottom: 8px;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.dropdownIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 0;
 }
 
 .groupProjects {
-  padding-left: 16px;
+  padding-left: 24px;
+  margin-top: 4px;
 }
 
 .projectInGroup {
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin-bottom: 4px;
+  gap: 6px;
+  font-size: 14px;
+  padding: 4px 0;
 }
+
+.projectDot {
+  color: #3a5bc7;
+}
+
+.folderIcon {
+  margin-right: 6px;
+}
+
 .activeDrop {
-  border-color: #5b9bd5; /* Голубая рамка при наведении */
-  // background-color: #f0f8ff; /* Лёгкий фон */
+  border: 1px dashed #3a5bc7;
+  background: rgba(58, 91, 199, 0.1);
 }

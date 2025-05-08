@@ -1,77 +1,96 @@
-.addGroup {
-  color: white;
+.createGroup {
+  margin-bottom: 20px;
 }
 
 .sectionHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 8px;
+  cursor: pointer;
 
   .label {
+    font: var(--font-s);
+    color: white;
     display: flex;
     align-items: center;
-    gap: 10px;
-
-    img {
-      width: 14px;
-      height: 9px;
-      transition: transform 0.3s ease;
-    }
-    span {
-      font: var(--font-s);
-    }
+    gap: 8px;
   }
 
   button {
     background: none;
     border: none;
-    color: inherit;
-    font-size: 18px;
+    color: white;
     cursor: pointer;
     padding: 0;
-    &:hover {
-      color: $blue;
-    }
   }
+}
+.groupsList {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dropdownIcon {
+  transition: transform 0.2s ease;
 }
 
 .inputWrapper {
-  margin-top: 8px;
+  overflow: hidden;
+  margin-bottom: 8px;
 
   input {
-    padding: 4px 10px;
-    border-radius: 4px;
-    border: 1px solid #ccc; // добавил бордер чтобы видеть input
     width: 100%;
-    outline: none;
-    background-color: #fff;
-    color: #000;
+    padding: 6px 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: white;
+    color: black;
   }
 }
 
-.groupList {
-  margin-top: 8px;
-  list-style: none;
-  padding: 0;
+.groupsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .groupItem {
-  width: 100%;
-  white-space: normal; // перенос строк если текст длинный
-  overflow-wrap: anywhere; // переносить любое слово
-  padding: 8px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2); // отделяем группы
-  font-size: 14px;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  color: white;
 }
-.dropdownIcon {
+
+.groupHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
   cursor: pointer;
-  transform: rotate(-90deg);
-  transition: transform 0.3s ease;
-  color: #f3f3f3;
-  &:hover {
-    color: $blue;
-  }
+  font-weight: bold;
 }
-.dropdownIcon.open {
-  transform: rotate(0deg);
+
+.groupProjects {
+  padding-left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.projectInGroup {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  padding: 4px 0;
+}
+
+.projectDot {
+  color: #3a5bc7;
+}
+
+.folderIcon {
+  margin-right: 6px;
 }

@@ -1,4 +1,4 @@
-import sevendays from "@shared/assets/icons/7days-big.svg";
+import sevendays from "@shared/assets/icons/lending/7days-big.svg";
 import styles from "./sevendays.module.scss";
 export const SevenDays = () => {
   return (

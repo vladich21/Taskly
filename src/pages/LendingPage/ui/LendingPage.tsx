@@ -10,7 +10,7 @@ import { Footer } from "@widgets/Footer";
 
 import styles from "./Lending.module.scss";
 import { useRef } from "react";
-import { ScrollToTop } from "../../../shared/components/ui/ScrollToTop/ScrollToTop.module";
+import { ScrollToTop } from "@shared/components/ui/ScrollToTop";
 
 const LendingPage = () => {
   const myDayRef = useRef<HTMLDivElement>(null);

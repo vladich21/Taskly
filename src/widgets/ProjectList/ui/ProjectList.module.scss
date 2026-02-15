@@ -1,0 +1,60 @@
+.projectList {
+  margin-bottom: 20px;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+
+  .label {
+    font: var(--font-s);
+    color: white;
+  }
+
+  button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0;
+  }
+}
+
+.inputWrapper {
+  overflow: hidden;
+  margin-bottom: 8px;
+
+  input {
+    width: 100%;
+    padding: 6px 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: white;
+    color: black;
+  }
+}
+
+.projectsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.projectItem {
+  padding: 8px 12px;
+  background: #1a235a;
+  border-radius: 4px;
+  color: white;
+  cursor: grab;
+  will-change: transform;
+
+  &:hover {
+    background: #2a3a7a;
+  }
+
+  &:active {
+    cursor: grabbing;
+  }
+}

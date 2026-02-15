@@ -1,6 +1,6 @@
 import styles from "./calendar.module.scss";
-import calendar from "@shared/assets/icons/calendar-big.svg";
-import calendarTwo from "@shared/assets/icons/calendar-two.svg";
+import calendar from "@shared/assets/icons/lending/calendar-big.svg";
+import calendarTwo from "@shared/assets/icons/lending/calendar-two.svg";
 
 export const Calendar = () => {
   return (

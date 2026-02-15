@@ -1,0 +1,126 @@
+.taskForm {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+h3 {
+  text-align: center;
+  font-weight: bold;
+}
+.formGroup {
+  margin-bottom: 15px;
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #333;
+  }
+
+  input,
+  select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+}
+
+.formRow {
+  display: flex;
+  gap: 15px;
+
+  .formGroup {
+    flex: 1;
+  }
+}
+
+.toggleDependenciesButton {
+  padding: 8px 12px;
+  background: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 8px;
+  transition: all 0.2s;
+
+  &:hover {
+    background: #e0e0e0;
+  }
+}
+
+.dependenciesContainer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  margin-top: 8px;
+
+  &.visible {
+    max-height: 300px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+  }
+}
+
+.dependenciesList {
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 8px;
+  max-height: 280px;
+  overflow-y: auto;
+  background: white;
+}
+
+.dependencyItem {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #f5f5f5;
+  cursor: pointer;
+  transition: background 0.2s;
+
+  &:hover {
+    background: #f9f9f9;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  input {
+    width: auto;
+    margin-right: 10px;
+  }
+
+  span {
+    font-size: 14px;
+  }
+}
+
+.noTasks {
+  color: #999;
+  font-style: italic;
+  padding: 10px 0;
+}
+
+.submitButton {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+
+  &:hover {
+    background: #45a049;
+  }
+
+  &:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+  }
+}

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Logo } from "@shared/components/ui/Logo/Logo";
+import { Logo } from "@shared/components/ui/Logo/ui/Logo";
 import styles from "./header.module.scss";
 import cn from "classnames";
 
